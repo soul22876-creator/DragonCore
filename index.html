@@ -3,193 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VELORA Fashion</title>
+<title>Minecraft Pro Dashboard</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    font-family:Poppins, sans-serif;
-    background:#0b0f1a;
-    color:white;
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #0a0f1c;
+    color: white;
+    overflow-x: hidden;
 }
 
-/* NAV */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 50px;
-    background:#0f172a;
-    position:sticky;
-    top:0;
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    background: #0f172a;
+    padding: 20px;
+    border-right: 1px solid #1e293b;
 }
 
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    color:#ffcc70;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ffcc;
+    margin-bottom: 30px;
 }
 
-nav a{
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
+.nav button {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0;
+    background: #111827;
+    border: 1px solid #1f2937;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-/* HERO */
-.hero{
-    height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
-    url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd49') center/cover;
+.nav button:hover {
+    background: #00ffcc;
+    color: black;
 }
 
-.hero h1{
-    font-size:60px;
-    color:#ffcc70;
+/* Main */
+.main {
+    margin-left: 280px;
+    padding: 20px;
 }
 
-.hero p{
-    color:#ddd;
+/* Top Bar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.btn{
-    padding:12px 25px;
-    background:#ffcc70;
-    border:none;
-    margin-top:15px;
-    cursor:pointer;
-    font-weight:bold;
+.status {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #052e1b;
+    color: #00ff99;
+    border: 1px solid #00ff99;
 }
 
-/* CATEGORIES */
-.section{
-    padding:60px;
-    text-align:center;
+/* Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+.card {
+    background: linear-gradient(145deg, #0f172a, #111827);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #1f2937;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
 
-.card{
-    background:#111827;
-    padding:20px;
-    border-radius:12px;
-    transition:0.3s;
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00ffcc;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    background:#1f2937;
+.card h3 {
+    margin: 0;
+    color: #00ffcc;
 }
 
-.card img{
-    width:100%;
-    border-radius:10px;
+/* Console */
+.console {
+    background: black;
+    padding: 15px;
+    height: 220px;
+    overflow-y: auto;
+    border-radius: 12px;
+    font-family: monospace;
+    border: 1px solid #1f2937;
 }
 
-/* PROMO */
-.promo{
-    background:#ffcc70;
-    color:black;
-    padding:40px;
-    text-align:center;
-    font-size:24px;
-    font-weight:bold;
+/* Buttons */
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
 }
 
-/* FOOTER */
-footer{
-    background:#0f172a;
-    padding:30px;
-    text-align:center;
-    color:#aaa;
-}
+.start { background: #00ff99; }
+.stop { background: #ff3b3b; color:white; }
+.restart { background: #facc15; }
+
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">VELOR</div>
-    <div>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">New Arrivals</a>
-        <a href="#">Contact</a>
+<div class="sidebar">
+    <div class="logo">⚡ MINECRAFT PRO</div>
+    <div class="nav">
+        <button>Dashboard</button>
+        <button>Players</button>
+        <button>World</button>
+        <button>Files</button>
+        <button>Settings</button>
+        <button>Backups</button>
     </div>
-</nav>
-
-<section class="hero">
-    <div>
-        <h1>Luxury Fashion</h1>
-        <p>Upgrade your style with premium clothing collection</p>
-        <button class="btn">Shop Now</button>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Categories</h2>
-    <div class="grid">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-            <h3>Men Wear</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1520975682031-a2b4d6f4f6c1">
-            <h3>Women Wear</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-            <h3>Street Fashion</h3>
-        </div>
-
-    </div>
-</section>
-
-<div class="promo">
-🔥 Mega Sale - Up to 50% OFF Today Only!
 </div>
 
-<section class="section">
-    <h2>Featured Products</h2>
+<div class="main">
+
+    <div class="topbar">
+        <h2>Server Dashboard</h2>
+        <div class="status" id="status">🟢 Online</div>
+    </div>
 
     <div class="grid">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1521334884684-d80222895322">
-            <h3>Classic Jacket</h3>
-            <p>$120</p>
+            <h3>Server Control</h3>
+            <button class="btn start" onclick="log('Server Started')">Start</button>
+            <button class="btn stop" onclick="log('Server Stopped')">Stop</button>
+            <button class="btn restart" onclick="log('Server Restarted')">Restart</button>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
-            <h3>Urban Hoodie</h3>
-            <p>$80</p>
+            <h3>Players Online</h3>
+            <p>Steve, Alex, Player123</p>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1520975958225-2c0a8b0f4f0f">
-            <h3>Premium Shirt</h3>
-            <p>$60</p>
+            <h3>RAM Usage</h3>
+            <p>2.1 GB / 8 GB</p>
+        </div>
+
+        <div class="card">
+            <h3>CPU Load</h3>
+            <p>35%</p>
+        </div>
+
+        <div class="card">
+            <h3>Live Console</h3>
+            <div class="console" id="console"></div>
         </div>
 
     </div>
-</section>
 
-<footer>
-    © 2026 VELORA Fashion | All Rights Reserved
-</footer>
+</div>
+
+<script>
+let box = document.getElementById("console");
+let status = document.getElementById("status");
+
+function log(msg){
+    box.innerHTML += ">> " + msg + "<br>";
+    box.scrollTop = box.scrollHeight;
+}
+
+function setOnline(){
+    status.innerHTML = "🟢 Online";
+}
+
+setOnline();
+log("Dashboard loaded...");
+</script>
 
 </body>
 </html>
